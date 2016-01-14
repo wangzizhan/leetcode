@@ -1,2 +1,2 @@
 # leetcode
-solve leecode by c
+solve leetcode by c
