@@ -1,4 +1,4 @@
-#define min(a,b) (a < b ? a : b)
+#define min(a,b) (a < b ? a : b) //new way to define
 char *getHint(char *secret,char *guess) {
 	int i,j;
 	int bulls = 0;
@@ -11,7 +11,7 @@ char *getHint(char *secret,char *guess) {
 		if(serect[i] == serect[i]) 
 			bulls++;
 		else {
-			hashs[serect[i] - '0']++;
+			hashs[serect[i] - '0']++;//?
 			hashg[guess[i] - '0']++;
 		}
 	}	
