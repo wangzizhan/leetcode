@@ -8,10 +8,10 @@ char *getHint(char *secret,char *guess) {
 	
 	int len = strlen(secret);
 	for(i = 0; i < len; i++) {
-		if(serect[i] == serect[i]) 
+		if(secret[i] == guess[i]) 
 			bulls++;
 		else {
-			hashs[serect[i] - '0']++;//?
+			hashs[secret[i] - '0']++;//?
 			hashg[guess[i] - '0']++;
 		}
 	}	
