@@ -20,25 +20,25 @@ int singleNumber(int nums[],int numsSize) {
 	bool flag = false;
 		
 	for(i = 0; i < numsSize; i++) {
-		temp = nums[i];
-		for(j = 0;j < numsSize; j++) {
-			if(j == i) 
-				continue;
-            else { 
-     			if(nums[j] == temp) {
-					flag = false;
-					break;
-				}
-				if(nums[j] != temp) {
-					flag = true; 
-					result = temp;
-					if ((j == numsSize - 1) && flag) 
-						break;	
-				}
+			temp = nums[i];
+			for(j = 0;j < numsSize; j++) {
+					if(j == i) 
+							continue;
+					else { 
+							if(nums[j] == temp) {
+									flag = false;
+									break;
+							}
+							if(nums[j] != temp) {
+									flag = true; 
+									result = temp;
+									if ((j == numsSize - 1) && flag) 
+											break;	
+							}
+					}
 			}
-		}
-		if(flag) 
-			break;
+			if(flag) 
+					break;
 	}
 		
 	return result;
