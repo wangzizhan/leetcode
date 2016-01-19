@@ -1,28 +1,38 @@
 #include<stdio.h>
-#include<string.h>
 #include<stdbool.h>
-#define len 7 
+#include<string.h>
+#include<stdlib.h>
+
+int singleNumber(int nums[],int numsSize);
+
 int main(void) {
+	int arr[] = {1,2,1,3,4,3,4};
+	int len = sizeof(arr) / sizeof(arr[0]);
+	printf("%d\n",singleNumber(arr,len));
+	
+	return 0;		
+}
+
+int singleNumber(int nums[],int numsSize) {
 	int i,j;
 	int temp = 0;
 	int result = 0;
 	bool flag = false;
-	int arr[7] = {1,2,3,4,3,2,1};	
-	
-	for(i = 0; i < len; i++) {
-		temp = arr[i];
-		for(j = 0;j < len; j++) {
+		
+	for(i = 0; i < numsSize; i++) {
+		temp = nums[i];
+		for(j = 0;j < numsSize; j++) {
 			if(j == i) 
 				continue;
             else { 
-     			if(arr[j] == temp) {
+     			if(nums[j] == temp) {
 					flag = false;
 					break;
 				}
-				if(arr[j] != temp) {
+				if(nums[j] != temp) {
 					flag = true; 
 					result = temp;
-					if ((j == len - 1) && flag) 
+					if ((j == numsSize - 1) && flag) 
 						break;	
 				}
 			}
@@ -30,9 +40,6 @@ int main(void) {
 		if(flag) 
 			break;
 	}
-
-	if(flag) 
-		printf("The number is %d\n",result);
-	else
-		printf("ok\n");
+		
+	return result;
 }
